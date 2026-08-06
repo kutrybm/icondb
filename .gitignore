@@ -1,0 +1,37 @@
+# Email archives (contain sensitive internal communications)
+*.msg
+
+# Large archives
+*.zip
+
+# Temporary/output files
+GPSFixedInputOutputReport_*
+
+# Sensitive data files (review before sharing)
+*upload pack/
+*upload pack.zip
+OneDrive_*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Excel temporary files
+~$*.xlsx
+~$*.xlsm
+~$*.docx
+
+# Images (optional - uncomment if you don't want to track images)
+# *.jpg
+# *.png
+
+# Anonymized versions (keep original, exclude anonymized if needed)
+# *_anonimized.*

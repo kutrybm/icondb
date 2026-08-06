@@ -1,0 +1,1367 @@
+{
+  "info": {
+    "_postman_id": "866a98db-99e7-401b-8761-05296ccc8bae",
+    "name": "IconDB REFERENCE",
+    "description": "A collection of authenticated endpoints for retrieving data from the IconDB within Canvas.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32091585"
+  },
+  "item": [
+    {
+      "name": "Meta",
+      "item": [
+        {
+          "name": "Types",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/type",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "type"
+              ]
+            },
+            "description": "Represents the major classes of assets which can be stored within IconDB. The different types of assets are used in different ways by consuming applications."
+          },
+          "response": [
+            {
+              "name": "Types",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/type",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "type"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "49"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:26:38 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Icon\",\n    \"GraphicElement\",\n    \"Logo\",\n    \"RegulatoryIcon\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "LifeCycle States",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/lifecyclestate",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "lifecyclestate"
+              ]
+            },
+            "description": "Represents the valid \"statuses\" of assets as they progress from Draft to fully approved within IconDB."
+          },
+          "response": [
+            {
+              "name": "LifeCycle States",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/lifecyclestate",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "lifecyclestate"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "44"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:27:28 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Draft\",\n    \"InApproval\",\n    \"Released\",\n    \"Obsolete\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/categorization",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "categorization"
+              ]
+            },
+            "description": "Represents the business categorizations that can be assigned to assets. The format is `Category: Subcategory: Brand`"
+          },
+          "response": [
+            {
+              "name": "Categories",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/categorization",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "categorization"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "7576"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:27:39 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Baby Care: Baby Care Adjacencies : PAMPERS\",\n    \"Baby Care: Baby Care NBD : DODOT\",\n    \"Baby Care: Baby Care NBD : LUVS\",\n    \"Baby Care: Baby Care NBD : PAMPERS\",\n    \"Baby Care: Baby Connected Care : PAMPERS\",\n    \"Baby Care: Baby Wipes : DODOT\",\n    \"Baby Care: Baby Wipes : LUVS\",\n    \"Baby Care: Baby Wipes : PAMPERS\",\n    \"Baby Care: Diapers : DODOT\",\n    \"Baby Care: Diapers : LUVS\",\n    \"Baby Care: Diapers : PAMPERS\",\n    \"Baby Care: Misc Baby Care : LUVS\",\n    \"Baby Care: Misc Baby Care : PAMPERS\",\n    \"Fabric Care: Fabric Care NBD : ACE\",\n    \"Fabric Care: Fabric Care NBD : ALO\",\n    \"Fabric Care: Fabric Care NBD : ARIEL\",\n    \"Fabric Care: Fabric Care NBD : BOLD\",\n    \"Fabric Care: Fabric Care NBD : BOUNCE\",\n    \"Fabric Care: Fabric Care NBD : CHEER\",\n    \"Fabric Care: Fabric Care NBD : DASH\",\n    \"Fabric Care: Fabric Care NBD : DAZ\",\n    \"Fabric Care: Fabric Care NBD : DOWNY\",\n    \"Fabric Care: Fabric Care NBD : DREFT\",\n    \"Fabric Care: Fabric Care NBD : ERA\",\n    \"Fabric Care: Fabric Care NBD : FAIRY\",\n    \"Fabric Care: Fabric Care NBD : GAIN\",\n    \"Fabric Care: Fabric Care NBD : LENOR\",\n    \"Fabric Care: Fabric Care NBD : RINDEX\",\n    \"Fabric Care: Fabric Care NBD : TIDE\",\n    \"Fabric Care: Fabric Enhancers : BOUNCE\",\n    \"Fabric Care: Fabric Enhancers : DOWNY\",\n    \"Fabric Care: Fabric Enhancers : GAIN\",\n    \"Fabric Care: Fabric Enhancers : LENOR\",\n    \"Fabric Care: Fabric Revitalizer : ACE\",\n    \"Fabric Care: Fabric Revitalizer : DOWNY\",\n    \"Fabric Care: Fabric Revitalizer : LENOR\",\n    \"Fabric Care: Fabric Revitalizer : TIDE\",\n    \"Fabric Care: Laundry : ACE\",\n    \"Fabric Care: Laundry : ALO\",\n    \"Fabric Care: Laundry : ARIEL\",\n    \"Fabric Care: Laundry : BOLD\",\n    \"Fabric Care: Laundry : CHEER\",\n    \"Fabric Care: Laundry : DASH\",\n    \"Fabric Care: Laundry : DAZ\",\n    \"Fabric Care: Laundry : DREFT\",\n    \"Fabric Care: Laundry : ERA\",\n    \"Fabric Care: Laundry : FAIRY\",\n    \"Fabric Care: Laundry : GAIN\",\n    \"Fabric Care: Laundry : IVORY\",\n    \"Fabric Care: Laundry : RINDEX\",\n    \"Fabric Care: Laundry : TIDE\",\n    \"Fabric Care: Laundry Additives : DOWNY\",\n    \"Fabric Care: Laundry Additives : LENOR\",\n    \"Fabric Care: Misc Fabric Care : TIDE\",\n    \"Fabric Care: Prof Fabric Care : ARIEL\",\n    \"Family Care: Family Care NBD : BOUNTY\",\n    \"Family Care: Family Care NBD : CHARMIN\",\n    \"Family Care: Family Care NBD : PUFFS\",\n    \"Family Care: Misc Family Care : BOUNTY\",\n    \"Family Care: Personal Tissue : PUFFS\",\n    \"Family Care: Prof Paper : BOUNTY\",\n    \"Family Care: Toilet Tissue : CHARMIN\",\n    \"Family Care: Towels/Napkins : ALWAYS\",\n    \"Family Care: Towels/Napkins : AUSONIA\",\n    \"Family Care: Towels/Napkins : BOUNTY\",\n    \"Family Care: Towels/Napkins : DISCREET\",\n    \"Family Care: Towels/Napkins : EVAX\",\n    \"Family Care: Towels/Napkins : ORKID\",\n    \"Family Care: Towels/Napkins : TAMPAX\",\n    \"Feminine Care: Adult Incontinence : ALWAYS\",\n    \"Feminine Care: Intimate Care : ALWAYS\",\n    \"Feminine Care: Intimate Care : L.\",\n    \"Feminine Care: Liners : ALWAYS\",\n    \"Feminine Care: Liners : Naturella\",\n    \"Feminine Care: Pads : ALWAYS\",\n    \"Feminine Care: Pads : Naturella\",\n    \"Feminine Care: Tampons : ALWAYS\",\n    \"Feminine Care: Tampons : Naturella\",\n    \"Feminine Care: Tampons : TAMPAX\",\n    \"Hair Care: Female Hair Care : AUSSIE\",\n    \"Hair Care: Female Hair Care : HAIR BIOLOGY\",\n    \"Hair Care: Female Hair Care : HAIR FOOD\",\n    \"Hair Care: Female Hair Care : HEAD&SHOULDERS\",\n    \"Hair Care: Female Hair Care : HERBAL ESSENCES\",\n    \"Hair Care: Female Hair Care : MY BLACK IS BEAUTIFUL\",\n    \"Hair Care: Female Hair Care : PANTENE\",\n    \"Hair Care: Female Hair Care : PANTENE PRO-V\",\n    \"Hair Care: Female Hair Care : REJOICE\",\n    \"Hair Care: Female Hair Color : PANTENE\",\n    \"Hair Care: Female Prestige Hair : HAIR FOOD\",\n    \"Hair Care: Hair Care Appliance : PANTENE\",\n    \"Hair Care: Male Hair Care : HEAD&SHOULDERS\",\n    \"Hair Care: Male Hair Care : OLD SPICE\",\n    \"Hair Care: Male Hair Care : PANTENE\",\n    \"Hair Care: Misc Female Hair Care : PANTENE\",\n    \"Hair Care: Professional Hair Products : PANTENE\",\n    \"Home Care: Air Care : AMBI PUR\",\n    \"Home Care: Air Care : FEBREZE\",\n    \"Home Care: Auto Dish : CASCADE\",\n    \"Home Care: Auto Dish : FAIRY\",\n    \"Home Care: Dish Care : CASCADE\",\n    \"Home Care: Dish Care : DAWN\",\n    \"Home Care: Dish Care : FAIRY\",\n    \"Home Care: Dish Care : GAIN\",\n    \"Home Care: Dish Care : JOY\",\n    \"Home Care: Dish Care : SALVO\",\n    \"Home Care: Hand Dish : DAWN\",\n    \"Home Care: Hand Dish : GAIN\",\n    \"Home Care: Hand Dish : JOY\",\n    \"Home Care: Hand Dish : SALVO\",\n    \"Home Care: Home Care NBD : AMBI PUR\",\n    \"Home Care: Home Care NBD : ANTIKAL\",\n    \"Home Care: Home Care NBD : CASCADE\",\n    \"Home Care: Home Care NBD : COMET\",\n    \"Home Care: Home Care NBD : DAWN\",\n    \"Home Care: Home Care NBD : DON LIMPIO\",\n    \"Home Care: Home Care NBD : FAIRY\",\n    \"Home Care: Home Care NBD : FEBREZE\",\n    \"Home Care: Home Care NBD : GAIN\",\n    \"Home Care: Home Care NBD : JOY\",\n    \"Home Care: Home Care NBD : MEISTER PROPER\",\n    \"Home Care: Home Care NBD : MR. CLEAN\",\n    \"Home Care: Home Care NBD : MR. PROPER\",\n    \"Home Care: Home Care NBD : MR. PROPRE\",\n    \"Home Care: Home Care NBD : SALVO\",\n    \"Home Care: Home Care NBD : SWIFFER\",\n    \"Home Care: Home Care NBD : VIAKAL\",\n    \"Home Care: Iron Appliance : SWIFFER\",\n    \"Home Care: Misc Home Care : MR. CLEAN\",\n    \"Home Care: Prof Air Care : AMBI PUR\",\n    \"Home Care: Prof Auto Dish : CASCADE\",\n    \"Home Care: Prof Auto Dish : FAIRY\",\n    \"Home Care: Prof Dish Care : CASCADE\",\n    \"Home Care: Prof Hand Dish : FAIRY\",\n    \"Home Care: Prof Hand Dish : JOY\",\n    \"Home Care: Prof Surface Care : COMET\",\n    \"Home Care: Surface Care : ANTIKAL\",\n    \"Home Care: Surface Care : COMET\",\n    \"Home Care: Surface Care : DON LIMPIO\",\n    \"Home Care: Surface Care : MEISTER PROPER\",\n    \"Home Care: Surface Care : MR. CLEAN\",\n    \"Home Care: Surface Care : MR. PROPER\",\n    \"Home Care: Surface Care : MR. PROPRE\",\n    \"Home Care: Surface Care : SWIFFER\",\n    \"Home Care: Surface Care : VIAKAL\",\n    \"Oral Care: Dental Floss : ORAL B\",\n    \"Oral Care: Dentifrice : BLEND-A-MED\",\n    \"Oral Care: Dentifrice : CREST\",\n    \"Oral Care: Denture Care : FIXODENT\",\n    \"Oral Care: Denture Care : KUKIDENT\",\n    \"Oral Care: Manual Oral Care : ORAL B\",\n    \"Oral Care: Manual Oral Care : ZOOTH\",\n    \"Oral Care: Oral Rinse : SCOPE\",\n    \"Oral Care: Power Oral Care : ORAL B\",\n    \"Oral Care: Whitening/Sensitivity : CREST\",\n    \"Personal Care: AP/DO & Body Spray : SECRET\",\n    \"Personal Care: Personal Cleansing : IVORY\",\n    \"Personal Care: Personal Cleansing : OLAY\",\n    \"Personal Care: Personal Cleansing : SAFEGUARD\",\n    \"Personal Health Care: Analgesic : PRILOSEC\",\n    \"Personal Health Care: Laxative : META\",\n    \"Personal Health Care: Misc Personal Health Care : PRILOSEC\",\n    \"Personal Health Care: Misc Personal Health Care JV : CLEARBLUE\",\n    \"Personal Health Care: Personal Diagnostic Appliance : CLEARBLUE\",\n    \"Personal Health Care: Pharmaceuticals : PRILOSEC\",\n    \"Personal Health Care: Probiotics Supplement : ALIGN\",\n    \"Personal Health Care: Rapid Diagnostics : CLEARBLUE\",\n    \"Personal Health Care: Respiratory Care : VICKS\",\n    \"Personal Health Care: Stomach Remedy : ALIGN\",\n    \"Personal Health Care: Stomach Remedy : META\",\n    \"Personal Health Care: Stomach Remedy : PEPTOBISMOL\",\n    \"Personal Health Care: Stomach Remedy : ZZZQUIL\",\n    \"Personal Health Care: Vitamins & Supplements : ALIGN\",\n    \"Personal Health Care: Vitamins & Supplements : META\",\n    \"Shave Care: Cosmetics : GILLETTE\",\n    \"Shave Care: Fem Premium BladeRazor System : VENUS\",\n    \"Shave Care: Female Depilatories : BROWN\",\n    \"Shave Care: Female Disposable Razor : VENUS\",\n    \"Shave Care: Female Hair Removal Appliance : VENUS\",\n    \"Shave Care: Female Powered Hair Removal : VENUS\",\n    \"Shave Care: Female Shave Prep : VENUS\",\n    \"Shave Care: Male Disposable Razor : GILLETTE\",\n    \"Shave Care: Male Hair Removal Appliance : GILLETTE\",\n    \"Shave Care: Male OthSys/DblEdge BladeRazor : ART OF SHAVING\",\n    \"Shave Care: Male Premium BladeRazor System : BRAUN\",\n    \"Shave Care: Male Prestige Grooming : GILLETTE\",\n    \"Shave Care: Male Shave Prep : GILLETTE\",\n    \"Shave Care: Misc Female Grooming : VENUS\",\n    \"Shave Care: Misc Male Grooming : GILLETTE\",\n    \"Skin Care: Female Skin Care : NATIVE\",\n    \"Skin Care: Female Skin Care : OLAY\",\n    \"Skin Care: Female Skin Care : OLAZ\",\n    \"Skin Care: Super Premium Skin Care : SK-II\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Regions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/region",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "region"
+              ]
+            },
+            "description": "Represents the geographic sales Regions that can be assigned to assets."
+          },
+          "response": [
+            {
+              "name": "Regions",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/region",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "region"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "57"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:27:45 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Unknown\",\n    \"Greater Europe\",\n    \"IMEA\",\n    \"NA\",\n    \"LA\",\n    \"APAC\",\n    \"GC\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Countries",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/country",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "country"
+              ]
+            },
+            "description": "Represents the Countries that can be assigned to assets."
+          },
+          "response": [
+            {
+              "name": "Countries",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/country",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "country"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "3269"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:27:50 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Afghanistan\",\n    \"Aland Islands\",\n    \"Albania\",\n    \"Algeria\",\n    \"American Samoa\",\n    \"Andorra\",\n    \"Angola\",\n    \"Anguilla\",\n    \"Antarctica\",\n    \"Antigua and Barbuda\",\n    \"Argentina\",\n    \"Armenia\",\n    \"Aruba\",\n    \"Australia\",\n    \"Austria\",\n    \"Azerbaijan\",\n    \"Bahamas\",\n    \"Bahrain\",\n    \"Bangladesh\",\n    \"Barbados\",\n    \"Belarus\",\n    \"Belgium\",\n    \"Belize\",\n    \"Benin\",\n    \"Bermuda\",\n    \"Bhutan\",\n    \"Bolivia\",\n    \"Bosnia & Herzegovina\",\n    \"Botswana\",\n    \"Bouvet Island\",\n    \"Brazil\",\n    \"British Indian Ocean Territory\",\n    \"British Virgin Islands\",\n    \"Brunei Darussalam\",\n    \"Bulgaria\",\n    \"Burkina Faso\",\n    \"Burundi\",\n    \"Cambodia\",\n    \"Cameroon\",\n    \"Canada\",\n    \"Cape Verde\",\n    \"Cayman Islands\",\n    \"Central African Republic\",\n    \"Chad\",\n    \"Channel Islands\",\n    \"Chile\",\n    \"China\",\n    \"Christmas Island\",\n    \"Cocos (Keeling) Islands\",\n    \"Colombia\",\n    \"Comoros\",\n    \"Congo Republic of The\",\n    \"Congo The Democratic Republic Of The\",\n    \"Cook Islands\",\n    \"Costa Rica\",\n    \"Cote Divoire\",\n    \"Croatia\",\n    \"Cuba\",\n    \"Curacao\",\n    \"Cyprus\",\n    \"Czech Republic\",\n    \"Denmark\",\n    \"Djibouti\",\n    \"Dominica\",\n    \"Dominican Republic\",\n    \"East Timor\",\n    \"Ecuador\",\n    \"Egypt\",\n    \"El Salvador\",\n    \"Equatorial Guinea\",\n    \"Eritrea\",\n    \"Estonia\",\n    \"Ethiopia\",\n    \"Falkland Islands\",\n    \"Faroe Islands\",\n    \"Fiji\",\n    \"Finland\",\n    \"France\",\n    \"French Guiana\",\n    \"French Polynesia\",\n    \"French Southern Territories\",\n    \"Gabon\",\n    \"Gambia\",\n    \"Georgia\",\n    \"Germany\",\n    \"Ghana\",\n    \"Gibraltar\",\n    \"Greece\",\n    \"Greenland\",\n    \"Grenada\",\n    \"Guadeloupe\",\n    \"Guam\",\n    \"Guatemala\",\n    \"Guinea\",\n    \"Guinea-Bissau\",\n    \"Guyana\",\n    \"Haiti\",\n    \"Heard Island and McDonald Islands\",\n    \"Honduras\",\n    \"Hong Kong\",\n    \"Hungary\",\n    \"Iceland\",\n    \"India\",\n    \"Indonesia\",\n    \"Iran\",\n    \"Iraq\",\n    \"Ireland\",\n    \"Isle of Man\",\n    \"Israel\",\n    \"Italy\",\n    \"Jamaica\",\n    \"Japan\",\n    \"Jordan\",\n    \"Kazakhstan\",\n    \"Kenya\",\n    \"Kiribati\",\n    \"Kosovo\",\n    \"Kuwait\",\n    \"Kyrgyzstan\",\n    \"Laos\",\n    \"Latvia\",\n    \"Lebanon\",\n    \"Lesotho\",\n    \"Liberia\",\n    \"Libyan Arab Jamahiriya\",\n    \"Liechtenstein\",\n    \"Lithuania\",\n    \"Luxembourg\",\n    \"Macau\",\n    \"Macedonia\",\n    \"Madagascar\",\n    \"Malawi\",\n    \"Malaysia\",\n    \"Maldives\",\n    \"Mali\",\n    \"Malta\",\n    \"Marshall Islands\",\n    \"Martinique\",\n    \"Mauritania\",\n    \"Mauritius\",\n    \"Mayotte\",\n    \"Mexico\",\n    \"Micronesia Fed. States Of\",\n    \"Moldova\",\n    \"Monaco\",\n    \"Mongolia\",\n    \"Montenegro\",\n    \"Montserrat\",\n    \"Morocco\",\n    \"Mozambique\",\n    \"Myanmar\",\n    \"Namibia\",\n    \"Nauru\",\n    \"Nepal\",\n    \"Netherlands\",\n    \"Netherlands Antilles\",\n    \"New Caledonia\",\n    \"New Zealand\",\n    \"Nicaragua\",\n    \"Niger\",\n    \"Nigeria\",\n    \"Niue\",\n    \"Norfolk Island\",\n    \"North Korea\",\n    \"Northern Mariana Islands\",\n    \"Norway\",\n    \"Oman\",\n    \"Other\",\n    \"Pakistan\",\n    \"Palau\",\n    \"Palestine\",\n    \"Panama\",\n    \"Papua New Guinea\",\n    \"Paraguay\",\n    \"Peru\",\n    \"Philippines\",\n    \"Pitcairn Islands\",\n    \"Poland\",\n    \"Portugal\",\n    \"Puerto Rico\",\n    \"Qatar\",\n    \"Reunion\",\n    \"Romania\",\n    \"Russia\",\n    \"Rwanda\",\n    \"S. Georgia and S. Sandwich Islands\",\n    \"Saint Barthelemy\",\n    \"San Marino\",\n    \"Sao Tome and Principe\",\n    \"Saudi Arabia\",\n    \"Senegal\",\n    \"Serbia\",\n    \"Seychelles\",\n    \"Sierra Leone\",\n    \"Singapore\",\n    \"Sint Maarten\",\n    \"Slovakia\",\n    \"Slovenia\",\n    \"Solomon Islands\",\n    \"Somalia\",\n    \"South Africa\",\n    \"South Korea\",\n    \"South Sudan\",\n    \"Spain\",\n    \"Sri Lanka\",\n    \"St. Helena\",\n    \"St. Kitts and Nevis\",\n    \"St. Lucia\",\n    \"St. Pierre and Miquelon\",\n    \"St. Vincent and the Grenadines\",\n    \"Sudan\",\n    \"Suriname\",\n    \"Svalbard and Jan Mayen\",\n    \"Swaziland\",\n    \"Sweden\",\n    \"Switzerland\",\n    \"Syrian Arab Republic\",\n    \"Taiwan\",\n    \"Tajikistan\",\n    \"Tanzania\",\n    \"Thailand\",\n    \"Togo\",\n    \"Tokelau\",\n    \"Tonga\",\n    \"Trinidad and Tobago\",\n    \"Tunisia\",\n    \"Turkey\",\n    \"Turkmenistan\",\n    \"Turks and Caicos Islands\",\n    \"Tuvalu\",\n    \"Uganda\",\n    \"Ukraine\",\n    \"United Arab Emirates\",\n    \"United Kingdom\",\n    \"United States\",\n    \"Unknown\",\n    \"Uruguay\",\n    \"US Minor Outlying Islands\",\n    \"US Virgin Islands\",\n    \"Uzbekistan\",\n    \"Vanuatu\",\n    \"Vatican City\",\n    \"Venezuela\",\n    \"Vietnam\",\n    \"Wallis and Futuna\",\n    \"West Bank & Gaza\",\n    \"Western Sahara\",\n    \"Western Samoa\",\n    \"Yemen\",\n    \"Zambia\",\n    \"Zimbabwe\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Familes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/family",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "family"
+              ]
+            },
+            "description": "Represents the \"Icon Families\" that can be assigned to assets. An \"Icon Family\" is a way of grouping assets with similar characteristics or use cases together in the IconDB user interface."
+          },
+          "response": [
+            {
+              "name": "Familes",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/family",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "family"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "163"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:28:56 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Communication Icons\",\n    \"Contact Icons\",\n    \"FPO Icons\",\n    \"Recycling Icons\",\n    \"Temperature Icons\",\n    \"Test Icon\",\n    \"Familyy\",\n    \"Foomalie\",\n    \"NewFam\",\n    \"Home Care Dosing Instructions\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Copy Integration Type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/copyintegrationtype",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "copyintegrationtype"
+              ]
+            },
+            "description": "Represents the Copy Integration Types that can be assigned to assets. Copy Integration Types indicate the expected usage of the asset, particularly as it relates to other integrated systems."
+          },
+          "response": [
+            {
+              "name": "Copy Integration Type",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/copyintegrationtype",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "copyintegrationtype"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "101"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:29:08 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Regulatory\",\n    \"DesignMarketing\",\n    \"Shipper\",\n    \"RAndD\",\n    \"AddDB\",\n    \"SizeDB\",\n    \"GPSFixed\",\n    \"Ingredients\",\n    \"Claims\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "GS1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/gs1",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "gs1"
+              ]
+            },
+            "description": "Represents the GS1 CopyTypes and SubTypes that can be assigned to assets for those that correspond to a particular GS1 type."
+          },
+          "response": [
+            {
+              "name": "GS1",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/gs1",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "gs1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "627"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:29:16 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Hazard Symbol Master Graphic:CLP DPD_Pictograms\",\n    \"Hazard Symbol Master Graphic:CLP_Pictograms\",\n    \"Hazard Symbol Master Graphic:Hazard Symbol Graphic\",\n    \"Icon With Variable Text Master Graphic:Icon With Variable Text Graphic\",\n    \"Local Icon Master Graphic:Country specific icons\",\n    \"Local Icon Master Graphic:Local Icon Graphic\",\n    \"Regional Icon Master Graphic:AISE Icons\",\n    \"Regional Icon Master Graphic:AISE PSP Icons\",\n    \"Regional Icon Master Graphic:AISE Safe Use Icons\",\n    \"Regional Icon Master Graphic:CLP_E-Mark _Pictograms\",\n    \"Regional Icon Master Graphic:Liquitabs Product Identifier\",\n    \"Regional Icon Master Graphic:Regional Icon Graphic\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Regulatory Classification",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/regulatoryclassification",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "regulatoryclassification"
+              ]
+            },
+            "description": "Represents the Regulatory Classifications that can be assigned to assets."
+          },
+          "response": [
+            {
+              "name": "Regulatory Classification",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/regulatoryclassification",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "regulatoryclassification"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "396"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:29:24 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"All\",\n    \"Anti-Bacterial/Anti-Microbial\",\n    \"Articles/paper products\",\n    \"Compressed Nitrogen Products\",\n    \"Consumer Goods\",\n    \"Cosmetic\",\n    \"Dangerous Goods Products\",\n    \"Dietary Supplements\",\n    \"Drug\",\n    \"Electro-Mechanical Appliances\",\n    \"Energized Continuous Action products\",\n    \"FDA-Hazardous\",\n    \"Food\",\n    \"Household Goods/cleaning products\",\n    \"Irritant\",\n    \"Medical Device\",\n    \"Natural Health Products\",\n    \"Non-FDA Hazardous\",\n    \"OTC Drugs\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Package Levels",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/packagelevel",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "packagelevel"
+              ]
+            },
+            "description": "Represents the Package Levels that can be assigned to assets."
+          },
+          "response": [
+            {
+              "name": "Package Levels",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/packagelevel",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "packagelevel"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "35"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:29:52 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"Consumer\",\n    \"Customer\",\n    \"Transport\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Category Tags",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/categorytag",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "categorytag"
+              ]
+            },
+            "description": "Represents the existing Category Tags that can be assigned to assets. Tags are a flexible way to group and categorize assets. Note that new tags can be added during asset creation or editing."
+          },
+          "response": [
+            {
+              "name": "Category Tags",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/categorytag",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "categorytag"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "64"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:30:01 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"categoryTag\",\n    \"foocattag\",\n    \"icondbtagsample\",\n    \"versionupdatetag\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Region Tags",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/regiontag",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "regiontag"
+              ]
+            },
+            "description": "Represents the existing Region Tags that can be assigned to assets. Tags are a flexible way to group and categorize assets. Note that new tags can be added during asset creation or editing."
+          },
+          "response": [
+            {
+              "name": "Region Tags",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/regiontag",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "regiontag"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "110"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:30:13 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"barcattag\",\n    \"barregion\",\n    \"bazcattag\",\n    \"bazregion\",\n    \"fooregion\",\n    \"icondbtagsample\",\n    \"regionTag\",\n    \"versionupdatetag\"\n]"
+            }
+          ]
+        },
+        {
+          "name": "Other Tags",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/meta/othertag",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "meta",
+                "othertag"
+              ]
+            },
+            "description": "Represents the existing Other Tags that can be assigned to assets. Tags are a flexible way to group and categorize assets. Note that new tags can be added during asset creation or editing."
+          },
+          "response": [
+            {
+              "name": "Other Tags",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/meta/othertag",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "meta",
+                    "othertag"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "97"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.api+json; charset=utf-8"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:30:27 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    \"barotherother\",\n    \"bazotherother\",\n    \"foootherother\",\n    \"icondbtagsample\",\n    \"otherTag\",\n    \"versionupdatetag\"\n]"
+            }
+          ]
+        }
+      ],
+      "description": "Endpoints for retrieving the possible metadata values which can be assigned to IconDB assets or which can be used to search IconDB."
+    },
+    {
+      "name": "Asset Retrieval",
+      "item": [
+        {
+          "name": "Assets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseurl}}/v1/assets",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "v1",
+                "assets"
+              ],
+              "query": [
+                {
+                  "key": "assetType",
+                  "value": "",
+                  "description": "Int, supports multiple instances",
+                  "disabled": true
+                },
+                {
+                  "key": "assetTypeName",
+                  "value": "",
+                  "description": "String, supports multiple instances",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "assetTypeName",
+                  "value": "",
+                  "description": "String, supports multiple instances",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "country",
+                  "value": "",
+                  "description": "String, supports multiple instances",
+                  "disabled": true
+                },
+                {
+                  "key": "region",
+                  "value": "",
+                  "description": "String, supports multiple instances",
+                  "disabled": true
+                },
+                {
+                  "key": "author",
+                  "value": "",
+                  "description": "String, supports multiple instances",
+                  "disabled": true
+                },
+                {
+                  "key": "brand",
+                  "value": "",
+                  "description": "String, supports multiple instances",
+                  "disabled": true
+                },
+                {
+                  "key": "releaseStart",
+                  "value": "",
+                  "description": "String representation of date",
+                  "disabled": true
+                },
+                {
+                  "key": "releaseEnd",
+                  "value": "",
+                  "description": "String representation of date",
+                  "disabled": true
+                },
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "Int",
+                  "disabled": true
+                },
+                {
+                  "key": "familyName",
+                  "value": "",
+                  "description": "String",
+                  "disabled": true
+                },
+                {
+                  "key": "familyid",
+                  "value": "",
+                  "description": "Int",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "",
+                  "description": "String",
+                  "disabled": true
+                },
+                {
+                  "key": "version",
+                  "value": "",
+                  "description": "Int",
+                  "disabled": true
+                },
+                {
+                  "key": "canonicalId",
+                  "value": "",
+                  "description": "Int",
+                  "disabled": true
+                },
+                {
+                  "key": "includefile",
+                  "value": "",
+                  "description": "Bool",
+                  "disabled": true
+                },
+                {
+                  "key": "includemeta",
+                  "value": "",
+                  "description": "Bool",
+                  "disabled": true
+                },
+                {
+                  "key": "includethumbnail",
+                  "value": "",
+                  "description": "Bool",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "The primary endpoint for retrieving metadata and assets. Generally the values for the parameters are all optional, and the default behavior of the endpoint is to serve only the metadata absent parameters indicating otherwise.\n\nThe values for the parameters generally come from the values you find under the `Meta` folder in this collection. However, certain values represent database ids which can be found in the metadata json which is returned by this endpoint.\n\nNote that this endpoint will only return assets in `LifeCycleState = Released`."
+          },
+          "response": [
+            {
+              "name": "Assets",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseurl}}/v1/assets?assetTypeName=RegulatoryIcon&id=480",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "assets"
+                  ],
+                  "query": [
+                    {
+                      "key": "assetType",
+                      "value": "",
+                      "description": "Int, supports multiple instances",
+                      "disabled": true
+                    },
+                    {
+                      "key": "assetTypeName",
+                      "value": "RegulatoryIcon",
+                      "description": "String, supports multiple instances",
+                      "type": "text"
+                    },
+                    {
+                      "key": "assetTypeName",
+                      "value": "",
+                      "description": "String, supports multiple instances",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "country",
+                      "value": "",
+                      "description": "String, supports multiple instances",
+                      "disabled": true
+                    },
+                    {
+                      "key": "region",
+                      "value": "",
+                      "description": "String, supports multiple instances",
+                      "disabled": true
+                    },
+                    {
+                      "key": "author",
+                      "value": "",
+                      "description": "String, supports multiple instances",
+                      "disabled": true
+                    },
+                    {
+                      "key": "brand",
+                      "value": "",
+                      "description": "String, supports multiple instances",
+                      "disabled": true
+                    },
+                    {
+                      "key": "releaseStart",
+                      "value": "",
+                      "description": "String representation of date",
+                      "disabled": true
+                    },
+                    {
+                      "key": "releaseEnd",
+                      "value": "",
+                      "description": "String representation of date",
+                      "disabled": true
+                    },
+                    {
+                      "key": "id",
+                      "value": "480",
+                      "description": "Int"
+                    },
+                    {
+                      "key": "familyName",
+                      "value": "",
+                      "description": "String",
+                      "disabled": true
+                    },
+                    {
+                      "key": "familyid",
+                      "value": "",
+                      "description": "Int",
+                      "type": "text",
+                      "disabled": true
+                    },
+                    {
+                      "key": "name",
+                      "value": "",
+                      "description": "String",
+                      "disabled": true
+                    },
+                    {
+                      "key": "version",
+                      "value": "",
+                      "description": "Int",
+                      "disabled": true
+                    },
+                    {
+                      "key": "canonicalId",
+                      "value": "",
+                      "description": "Int",
+                      "disabled": true
+                    },
+                    {
+                      "key": "includefile",
+                      "value": "",
+                      "description": "Bool",
+                      "disabled": true
+                    },
+                    {
+                      "key": "includemeta",
+                      "value": "",
+                      "description": "Bool",
+                      "disabled": true
+                    },
+                    {
+                      "key": "includethumbnail",
+                      "value": "",
+                      "description": "Bool",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Length",
+                  "value": "10253"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "Content-Disposition",
+                  "value": "attachment; filename=metadata.json; filename*=UTF-8''metadata.json"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:35:10 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"Links\": {\n            \"Self\": {\n                \"Href\": \"https://canvas-dev.pg.com/graphics/Graphics/?id=480\"\n            },\n            \"Primary\": {\n                \"Href\": \"https://canvas-dev.pg.com/graphics/Graphics/?id=480&name=ShaveCare_SVO_Triman_Icon_CB_Insert_Leaflet&version=1\"\n            },\n            \"Discoverable\": {\n                \"Href\": \"https://canvas-dev.pg.com/graphics/Graphics/?canonicalid=480&version=1\"\n            }\n        },\n        \"CanonicalId\": 480,\n        \"Version\": 1,\n        \"IsPrintReady\": false,\n        \"IsRasterEmbedded\": false,\n        \"IsHasLiveText\": false,\n        \"Width\": 0.66667,\n        \"WidthUnits\": \"in\",\n        \"Height\": 2.73611,\n        \"HeightUnits\": \"in\",\n        \"DateReleased\": \"2025-03-04T08:08:20\",\n        \"DateValidUntil\": \"9999-12-31T12:00:00\",\n        \"SubcategoryBrands\": [\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Fem Premium BladeRazor System\",\n                    \"Id\": \"324\"\n                },\n                \"Brand\": {\n                    \"Name\": \"VENUS\",\n                    \"Id\": \"173543\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Female Disposable Razor\",\n                    \"Id\": \"325\"\n                },\n                \"Brand\": {\n                    \"Name\": \"VENUS\",\n                    \"Id\": \"173543\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Female Hair Removal Appliance\",\n                    \"Id\": \"326\"\n                },\n                \"Brand\": {\n                    \"Name\": \"VENUS\",\n                    \"Id\": \"173543\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Female Powered Hair Removal\",\n                    \"Id\": \"327\"\n                },\n                \"Brand\": {\n                    \"Name\": \"VENUS\",\n                    \"Id\": \"173543\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Female Shave Prep\",\n                    \"Id\": \"328\"\n                },\n                \"Brand\": {\n                    \"Name\": \"VENUS\",\n                    \"Id\": \"173543\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Male Disposable Razor\",\n                    \"Id\": \"329\"\n                },\n                \"Brand\": {\n                    \"Name\": \"GILLETTE\",\n                    \"Id\": \"173544\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Male Hair Removal Appliance\",\n                    \"Id\": \"330\"\n                },\n                \"Brand\": {\n                    \"Name\": \"GILLETTE\",\n                    \"Id\": \"173544\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Male OthSys/DblEdge BladeRazor\",\n                    \"Id\": \"331\"\n                },\n                \"Brand\": {\n                    \"Name\": \"ART OF SHAVING\",\n                    \"Id\": \"173541\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Male Premium BladeRazor System\",\n                    \"Id\": \"332\"\n                },\n                \"Brand\": {\n                    \"Name\": \"BRAUN\",\n                    \"Id\": \"173542\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Male Prestige Grooming\",\n                    \"Id\": \"333\"\n                },\n                \"Brand\": {\n                    \"Name\": \"GILLETTE\",\n                    \"Id\": \"173544\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Male Shave Prep\",\n                    \"Id\": \"334\"\n                },\n                \"Brand\": {\n                    \"Name\": \"GILLETTE\",\n                    \"Id\": \"173544\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Misc Male Grooming\",\n                    \"Id\": \"335\"\n                },\n                \"Brand\": {\n                    \"Name\": \"GILLETTE\",\n                    \"Id\": \"173544\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Cosmetics\",\n                    \"Id\": \"395\"\n                },\n                \"Brand\": {\n                    \"Name\": \"GILLETTE\",\n                    \"Id\": \"173544\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Female Depilatories\",\n                    \"Id\": \"397\"\n                },\n                \"Brand\": {\n                    \"Name\": \"BROWN\",\n                    \"Id\": \"173595\"\n                }\n            },\n            {\n                \"Subcategory\": {\n                    \"Category\": {\n                        \"SubcategoryBrands\": [],\n                        \"Name\": \"Shave Care\",\n                        \"Id\": \"42\"\n                    },\n                    \"Name\": \"Misc Female Grooming\",\n                    \"Id\": \"402\"\n                },\n                \"Brand\": {\n                    \"Name\": \"VENUS\",\n                    \"Id\": \"173543\"\n                }\n            }\n        ],\n        \"Countries\": [\n            {\n                \"Name\": \"Andorra\",\n                \"Id\": \"8\"\n            },\n            {\n                \"Name\": \"Austria\",\n                \"Id\": \"17\"\n            },\n            {\n                \"Name\": \"Belarus\",\n                \"Id\": \"23\"\n            },\n            {\n                \"Name\": \"Belgium\",\n                \"Id\": \"24\"\n            },\n            {\n                \"Name\": \"Canada\",\n                \"Id\": \"41\"\n            },\n            {\n                \"Name\": \"Costa Rica\",\n                \"Id\": \"55\"\n            },\n            {\n                \"Name\": \"Croatia\",\n                \"Id\": \"57\"\n            },\n            {\n                \"Name\": \"Cyprus\",\n                \"Id\": \"59\"\n            },\n            {\n                \"Name\": \"Czech Republic\",\n                \"Id\": \"60\"\n            },\n            {\n                \"Name\": \"Denmark\",\n                \"Id\": \"62\"\n            },\n            {\n                \"Name\": \"Estonia\",\n                \"Id\": \"72\"\n            },\n            {\n                \"Name\": \"Faroe Islands\",\n                \"Id\": \"75\"\n            },\n            {\n                \"Name\": \"Finland\",\n                \"Id\": \"78\"\n            },\n            {\n                \"Name\": \"France\",\n                \"Id\": \"253\"\n            },\n            {\n                \"Name\": \"Germany\",\n                \"Id\": \"87\"\n            },\n            {\n                \"Name\": \"Gibraltar\",\n                \"Id\": \"89\"\n            },\n            {\n                \"Name\": \"Greece\",\n                \"Id\": \"90\"\n            },\n            {\n                \"Name\": \"Greenland\",\n                \"Id\": \"91\"\n            },\n            {\n                \"Name\": \"Hungary\",\n                \"Id\": \"103\"\n            },\n            {\n                \"Name\": \"Iceland\",\n                \"Id\": \"104\"\n            },\n            {\n                \"Name\": \"Ireland\",\n                \"Id\": \"109\"\n            },\n            {\n                \"Name\": \"Isle of Man\",\n                \"Id\": \"263\"\n            },\n            {\n                \"Name\": \"Italy\",\n                \"Id\": \"257\"\n            },\n            {\n                \"Name\": \"Kosovo\",\n                \"Id\": \"265\"\n            },\n            {\n                \"Name\": \"Latvia\",\n                \"Id\": \"123\"\n            },\n            {\n                \"Name\": \"Liechtenstein\",\n                \"Id\": \"128\"\n            },\n            {\n                \"Name\": \"Lithuania\",\n                \"Id\": \"129\"\n            },\n            {\n                \"Name\": \"Luxembourg\",\n                \"Id\": \"130\"\n            },\n            {\n                \"Name\": \"Malta\",\n                \"Id\": \"138\"\n            },\n            {\n                \"Name\": \"Netherlands\",\n                \"Id\": \"155\"\n            },\n            {\n                \"Name\": \"Norway\",\n                \"Id\": \"165\"\n            },\n            {\n                \"Name\": \"Poland\",\n                \"Id\": \"176\"\n            },\n            {\n                \"Name\": \"Portugal\",\n                \"Id\": \"177\"\n            },\n            {\n                \"Name\": \"Russia\",\n                \"Id\": \"182\"\n            },\n            {\n                \"Name\": \"Serbia\",\n                \"Id\": \"269\"\n            },\n            {\n                \"Name\": \"Slovakia\",\n                \"Id\": \"199\"\n            },\n            {\n                \"Name\": \"Slovenia\",\n                \"Id\": \"200\"\n            },\n            {\n                \"Name\": \"Spain\",\n                \"Id\": \"204\"\n            },\n            {\n                \"Name\": \"Sweden\",\n                \"Id\": \"211\"\n            },\n            {\n                \"Name\": \"Switzerland\",\n                \"Id\": \"212\"\n            }\n        ],\n        \"Regions\": [\n            {\n                \"Name\": \"Greater Europe\",\n                \"Id\": \"1\"\n            }\n        ],\n        \"GS1CopySubCopyType\": \"\",\n        \"Creator\": {\n            \"UserName\": \"sancon.dm\",\n            \"FirstName\": \"Deinielle\",\n            \"LastName\": \"Sancon\",\n            \"Email\": \"sancon.dm@pg.com\",\n            \"Id\": \"156\"\n        },\n        \"PrimaryAsset\": {\n            \"FileSystemName\": \"39122.pdf\",\n            \"GivenName\": \"480_ShaveCare_SVO_Triman_Icon_CB_Insert_Leaflet_v1.0.pdf\",\n            \"FileHash\": \"9bdc60282c19d39f29e36b617d3b29e2\",\n            \"Description\": \"\",\n            \"Created\": \"2025-02-22T15:52:24\",\n            \"Updated\": \"0001-01-01T00:00:00\",\n            \"AssetType\": \"All\",\n            \"Id\": \"39122\"\n        },\n        \"LifeCycleState\": \"Released\",\n        \"IsCausedQI\": true,\n        \"UsageRights\": \"\",\n        \"Families\": [],\n        \"Tags\": [\n            {\n                \"Id\": 599,\n                \"TagType\": \"Region\",\n                \"TagValue\": \"regionTag\"\n            },\n            {\n                \"Id\": 600,\n                \"TagType\": \"Category\",\n                \"TagValue\": \"categoryTag\"\n            },\n            {\n                \"Id\": 601,\n                \"TagType\": \"Other\",\n                \"TagValue\": \"otherTag\"\n            }\n        ],\n        \"RegulatoryClassifications\": [\n            \"Consumer Goods\"\n        ],\n        \"CopyIntegrationType\": [\n            \"DesignMarketing\",\n            \"Shipper\"\n        ],\n        \"Name\": \"ShaveCare_SVO_Triman_Icon_CB_Insert_Leaflet\",\n        \"Description\": \"Sample description 10 - bulk edit\",\n        \"Created\": \"2025-02-22T15:52:23\",\n        \"Updated\": \"2025-03-04T08:08:20\",\n        \"AssetType\": \"RegulatoryIcon\",\n        \"Id\": \"480\"\n    }\n]"
+            }
+          ]
+        }
+      ],
+      "description": "Endpoints for retrieving IconDB assets and associated metadata about those assets."
+    },
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Get Token",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "[username goes here - use vault secrets]",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "[password goes here - use vault secrets]",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseurl}}/Token",
+              "host": [
+                "{{baseurl}}"
+              ],
+              "path": [
+                "Token"
+              ]
+            },
+            "description": "Endpoint for generating a Bearer Token which is used in subsequent requests to the endpoints in this collection. The username must be a valid P&G user account, and the user must have an active account within IconDB."
+          },
+          "response": [
+            {
+              "name": "Get Token",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "grant_type",
+                      "value": "password",
+                      "type": "text"
+                    },
+                    {
+                      "key": "password",
+                      "value": "removed",
+                      "type": "text"
+                    },
+                    {
+                      "key": "username",
+                      "value": "usernamegoeshe.re",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseurl}}/Token",
+                  "host": [
+                    "{{baseurl}}"
+                  ],
+                  "path": [
+                    "Token"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "553"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8"
+                },
+                {
+                  "key": "Expires",
+                  "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+                },
+                {
+                  "key": "Server",
+                  "value": "Microsoft-IIS/10.0"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "ASP.NET"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Mar 2025 03:31:49 GMT"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"scope\": \"offline_access\",\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"TOKENWOULDGOHERE\",\n    \"expires_in\": 5184000,\n    \"refresh_token\": \"REFRESH\"\n}"
+            }
+          ]
+        }
+      ],
+      "description": "Endpoints for authenticating to the IconDB API.",
+      "auth": {
+        "type": "noauth"
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "[[token]]",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
