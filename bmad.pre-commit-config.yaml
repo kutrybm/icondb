@@ -1,0 +1,22 @@
+# Pre-commit hooks for BMAD Method - PM-Friendly Configuration
+# See https://pre-commit.com for more information
+#
+# This configuration focuses on AUTO-FIXABLE hooks that never block commits.
+# Non-technical Product Managers use this workspace via Copilot, so we avoid
+# hooks that show confusing error messages (shellcheck, conventional-commit, markdownlint).
+
+repos:
+  # File hygiene - all auto-fixable or critical safety checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      # Auto-fixes (never block)
+      - id: trailing-whitespace # Removes spaces at end of lines
+      - id: end-of-file-fixer # Ensures newline at EOF
+      - id: mixed-line-ending # Normalizes to LF line endings
+        args: ["--fix=lf"]
+
+      # Safety checks (rarely block, critical when they do)
+      - id: check-yaml # Validates YAML syntax
+      - id: check-added-large-files # Prevents files >500KB
+      - id: check-merge-conflict # Detects merge conflict markers
