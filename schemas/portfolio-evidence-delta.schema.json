@@ -1,0 +1,442 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:portfolio-control:schema:evidence-delta:2.0",
+  "title": "Portfolio evidence delta",
+  "description": "Privacy-minimized incremental evidence collected after a verified predecessor checkpoint.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "run",
+    "window",
+    "coverage",
+    "messages",
+    "calendarChanges",
+    "drafts",
+    "tasks",
+    "threadHeads",
+    "routes"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "2.0"
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runId",
+        "previousRunId",
+        "exportedAt",
+        "status",
+        "timeZone",
+        "collector",
+        "mailboxScope",
+        "outputPath"
+      ],
+      "properties": {
+        "runId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "previousRunId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "exportedAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "status": {
+          "const": "complete"
+        },
+        "timeZone": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "collector": {
+          "const": "Power Automate"
+        },
+        "mailboxScope": {
+          "const": "delegated-user"
+        },
+        "outputPath": {
+          "type": "string",
+          "pattern": "^/GBS IT docs/\\.local/portfolio-control/candidates/portfolio-evidence-delta-[0-9]{8}-[0-9]{6}Z-[0-9a-fA-F-]{36}\\.json$"
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "previousWatermark",
+        "windowStart",
+        "windowEnd",
+        "overlapMinutes"
+      ],
+      "properties": {
+        "previousWatermark": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "windowStart": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "windowEnd": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "overlapMinutes": {
+          "type": "integer",
+          "minimum": 5,
+          "maximum": 120
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inbox",
+        "sentItems",
+        "calendar",
+        "drafts",
+        "tasks"
+      ],
+      "properties": {
+        "inbox": {
+          "$ref": "#/$defs/coverage"
+        },
+        "sentItems": {
+          "$ref": "#/$defs/coverage"
+        },
+        "calendar": {
+          "$ref": "#/$defs/coverage"
+        },
+        "drafts": {
+          "$ref": "#/$defs/coverage"
+        },
+        "tasks": {
+          "$ref": "#/$defs/coverage"
+        }
+      }
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/message"
+      }
+    },
+    "calendarChanges": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/calendarChange"
+      }
+    },
+    "drafts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/draft"
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/task"
+      }
+    },
+    "threadHeads": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/threadHead"
+      }
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/route"
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete",
+        "sourceCount",
+        "retainedCount"
+      ],
+      "properties": {
+        "complete": {
+          "const": true
+        },
+        "sourceCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retainedCount": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "message": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableId",
+        "folder",
+        "occurredAt",
+        "subject",
+        "counterparty",
+        "bodyPreview",
+        "conversationId",
+        "importance"
+      ],
+      "properties": {
+        "stableId": {
+          "type": "string",
+          "pattern": "^mail:.+"
+        },
+        "folder": {
+          "enum": [
+            "inbox",
+            "sentItems"
+          ]
+        },
+        "occurredAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "subject": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "counterparty": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "bodyPreview": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "conversationId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "importance": {
+          "enum": [
+            "low",
+            "normal",
+            "high"
+          ]
+        }
+      }
+    },
+    "calendarChange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableId",
+        "fingerprint",
+        "changeType",
+        "privacyMode",
+        "start",
+        "end",
+        "showAs",
+        "isAllDay"
+      ],
+      "properties": {
+        "stableId": {
+          "type": "string",
+          "pattern": "^event:.+"
+        },
+        "fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "changeType": {
+          "enum": [
+            "added",
+            "updated",
+            "cancelled"
+          ]
+        },
+        "privacyMode": {
+          "enum": [
+            "relevant",
+            "busyOnly"
+          ]
+        },
+        "start": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "end": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "showAs": {
+          "enum": [
+            "free",
+            "tentative",
+            "busy",
+            "oof",
+            "workingelsewhere",
+            "unknown"
+          ]
+        },
+        "isAllDay": {
+          "type": "boolean"
+        },
+        "subject": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "bodyPreview": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "draft": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableId",
+        "lastModifiedAt",
+        "subject",
+        "recipientCount",
+        "attachmentCount"
+      ],
+      "properties": {
+        "stableId": {
+          "type": "string",
+          "pattern": "^draft:.+"
+        },
+        "lastModifiedAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "subject": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "conversationId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "recipientCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attachmentCount": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableId",
+        "lastModifiedAt",
+        "subject",
+        "status"
+      ],
+      "properties": {
+        "stableId": {
+          "type": "string",
+          "pattern": "^task:.+"
+        },
+        "lastModifiedAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "subject": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "status": {
+          "enum": [
+            "notStarted",
+            "inProgress",
+            "completed",
+            "waiting",
+            "deferred"
+          ]
+        },
+        "dueAt": {
+          "$ref": "#/$defs/dateTime"
+        }
+      }
+    },
+    "threadHead": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conversationId",
+        "previousHeadId",
+        "currentHeadId",
+        "changeType"
+      ],
+      "properties": {
+        "conversationId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "previousHeadId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "currentHeadId": {
+          "type": "string",
+          "pattern": "^mail:.+"
+        },
+        "changeType": {
+          "enum": [
+            "new",
+            "advanced"
+          ]
+        }
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableId",
+        "projects",
+        "disposition",
+        "reasonCodes"
+      ],
+      "properties": {
+        "stableId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "projects": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "icondb",
+              "phc-global",
+              "ai-translation"
+            ]
+          }
+        },
+        "disposition": {
+          "enum": [
+            "routed",
+            "ambiguous",
+            "unmatched"
+          ]
+        },
+        "reasonCodes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    }
+  }
+}

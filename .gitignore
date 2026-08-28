@@ -1,0 +1,41 @@
+# BMAD v6 generated runtime
+_bmad/
+.agents/skills/
+
+# User-specific AI configuration
+.claude/
+
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+
+# Environment variables and credentials
+.env
+.env.local
+
+# Logs
+*.log
+
+# Local Outlook exports and processing state
+.local/
+
+# Generated Jira snapshots; use the live Jira MCP integration instead
+IconDB_Jira_*.json
+IconDB_Jira_*.csv
+jira-fetch-log.txt
+test-result.json
+projects.json
+projects.txt
+temp_jira_extract/
+
+# Local bulk assets and backup archives; keep authoritative copies outside Git
+icons/
+OneDrive_*.zip
+FCEU upload pack.zip
+FC EU/No trapping/*.zip
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.idea/

@@ -1,0 +1,19 @@
+{
+	"servers": {
+		"jira-mcp-server": {
+			"command": "docker",
+			"type": "stdio",
+			"args": [
+				"--context",
+				"desktop-linux",
+				"run",
+				"--rm",
+				"-i",
+				"--env-file",
+				"${workspaceFolder}/.env",
+				"ghcr.io/procter-gamble/mcp-atlassian:main-manual"
+			]
+		}
+	},
+	"inputs": []
+}

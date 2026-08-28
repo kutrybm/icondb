@@ -1,0 +1,146 @@
+{
+  // ============================================
+  // CHAT & AGENT SETTINGS
+  // ============================================
+  "chat.agent.enabled": true,
+  "chat.agent.maxRequests": 15,
+  "github.copilot.chat.agent.autoFix": true,
+  "chat.editor.wordWrap": "on",
+  "chat.tools.terminal.autoApprove": {
+    "/^powershell -NoProfile -File scripts\\/Test-IconDBMorningSnapshot\\.ps1 -Path \\.local\\/power-automate\\/[A-Za-z0-9._-]+(?: -PromoteToLatest \\.local\\/power-automate\\/latest\\.json)?$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^powershell -NoProfile -File scripts\\/ConvertTo-IconDBMarkdownSafeSnapshot\\.ps1 -Path \\.local\\/power-automate\\/latest\\.json -OutputPath \\.local\\/power-automate\\/latest\\.markdown-safe\\.json$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  },
+  // ============================================
+  // EDITOR SETTINGS
+  // ============================================
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.trimAutoWhitespace": true,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.6,
+  "editor.lineNumbers": "on",
+  // ============================================
+  // FILES & WORKSPACE
+  // ============================================
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.eol": "\n",
+  "files.exclude": {
+    // Hide git and system files
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/tmp": true,
+    // Hide noise
+    "media": true,
+    "package-lock.json": true,
+    ".bmad-setup.env": true,
+    ".markdownlint.json": true,
+    ".pre-commit-config.yaml": true,
+    // VISIBLE to users
+    "docs": false,
+    "README.md": false,
+    "_bmad-output": false
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "files.associations": {
+    "*.md": "markdown",
+    "*.yaml": "yaml",
+    "*.yml": "yaml",
+    "justfile": "makefile"
+  },
+  // ============================================
+  // MARKDOWN SETTINGS
+  // ============================================
+  "markdown.preview.fontSize": 16,
+  "markdown.preview.lineHeight": 1.8,
+  "[markdown]": {
+    "editor.formatOnSave": true
+  },
+  // ============================================
+  // GIT SETTINGS
+  // ============================================
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.postCommitCommand": "none",
+  "git.suggestSmartCommit": true,
+  "git.ignoreRebaseWarning": true,
+  "git.openRepositoryInParentFolders": "always",
+  // ============================================
+  // GITHUB COPILOT SETTINGS
+  // ============================================
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "yaml": true,
+    "plaintext": true
+  },
+  "editor.lightbulb.enabled": "off",
+  // ============================================
+  // TERMINAL SETTINGS
+  // ============================================
+  "terminal.integrated.defaultLocation": "panel",
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "Windows PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.automationProfile.windows": {
+    "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  },
+  "terminal.integrated.env.windows": {
+    "DOCKER_CONTEXT": "desktop-linux"
+  },
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabs.hideCondition": "never",
+  // ============================================
+  // SEARCH SETTINGS
+  // ============================================
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/.vscode": true,
+    "**/.devcontainer": true
+  },
+  // ============================================
+  // EXPLORER SETTINGS
+  // ============================================
+  "explorer.confirmDelete": true,
+  "explorer.confirmDragAndDrop": true,
+  "explorer.sortOrder": "type",
+  // ============================================
+  // WORKBENCH SETTINGS
+  // ============================================
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.colorTheme": "Dark Modern",
+  "explorer.compactFolders": false,
+  // ============================================
+  // EXTENSIONS SETTINGS
+  // ============================================
+  "extensions.ignoreRecommendations": false
+}

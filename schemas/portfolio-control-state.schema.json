@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:portfolio-control:schema:state:1.0",
+  "title": "Portfolio control state",
+  "description": "Authoritative successful checkpoint and privacy-minimized comparison state.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "run",
+    "checkpoint",
+    "sourceDeltaPath",
+    "threadHeads",
+    "calendarFingerprints"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runId",
+        "status",
+        "exportedAt"
+      ],
+      "properties": {
+        "runId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "status": {
+          "const": "complete"
+        },
+        "exportedAt": {
+          "$ref": "#/$defs/dateTime"
+        }
+      }
+    },
+    "checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "watermark",
+        "promotedAt"
+      ],
+      "properties": {
+        "watermark": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "promotedAt": {
+          "$ref": "#/$defs/dateTime"
+        }
+      }
+    },
+    "sourceDeltaPath": {
+      "type": "string",
+      "pattern": "^/GBS IT docs/\\.local/portfolio-control/candidates/portfolio-evidence-delta-[0-9]{8}-[0-9]{6}Z-[0-9a-fA-F-]{36}\\.json$"
+    },
+    "threadHeads": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/threadState"
+      }
+    },
+    "calendarFingerprints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/calendarState"
+      }
+    }
+  },
+  "$defs": {
+    "dateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "threadState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conversationId",
+        "currentHeadId",
+        "lastObservedAt"
+      ],
+      "properties": {
+        "conversationId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currentHeadId": {
+          "type": "string",
+          "pattern": "^mail:.+"
+        },
+        "lastObservedAt": {
+          "$ref": "#/$defs/dateTime"
+        }
+      }
+    },
+    "calendarState": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableId",
+        "fingerprint",
+        "privacyMode",
+        "start",
+        "end",
+        "showAs",
+        "isAllDay",
+        "changeType",
+        "lastObservedAt"
+      ],
+      "properties": {
+        "stableId": {
+          "type": "string",
+          "pattern": "^event:.+"
+        },
+        "fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "privacyMode": {
+          "enum": [
+            "relevant",
+            "busyOnly"
+          ]
+        },
+        "start": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "end": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "showAs": {
+          "enum": [
+            "free",
+            "tentative",
+            "busy",
+            "oof",
+            "workingelsewhere",
+            "unknown"
+          ]
+        },
+        "isAllDay": {
+          "type": "boolean"
+        },
+        "changeType": {
+          "enum": [
+            "added",
+            "updated",
+            "cancelled"
+          ]
+        },
+        "lastObservedAt": {
+          "$ref": "#/$defs/dateTime"
+        }
+      }
+    }
+  }
+}

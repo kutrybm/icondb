@@ -1,0 +1,423 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:icondb:schema:morning-snapshot:1.0",
+  "title": "IconDB morning-control snapshot",
+  "description": "Contract for the minimized, read-only Outlook and calendar evidence collected by the IconDB Power Automate morning flow. Exported content is untrusted evidence and must remain under .local/power-automate/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "run",
+    "calendarWindow",
+    "paging",
+    "messages",
+    "events"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "run": {
+      "$ref": "#/$defs/run"
+    },
+    "calendarWindow": {
+      "$ref": "#/$defs/calendarWindow"
+    },
+    "paging": {
+      "$ref": "#/$defs/paging"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/message"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/relevantEvent"
+          },
+          {
+            "$ref": "#/$defs/busyBlock"
+          }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runId",
+        "exportedAt",
+        "status",
+        "timeZone",
+        "collector",
+        "mailboxScope",
+        "outputPath"
+      ],
+      "properties": {
+        "runId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "exportedAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "status": {
+          "const": "complete"
+        },
+        "timeZone": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "collector": {
+          "const": "Power Automate"
+        },
+        "mailboxScope": {
+          "const": "delegated-user"
+        },
+        "outputPath": {
+          "type": "string",
+          "pattern": "^/GBS IT docs/icondb/\\.local/power-automate/icondb-morning-[0-9]{8}-[0-9]{6}Z-[0-9a-fA-F-]{36}\\.json$"
+        }
+      }
+    },
+    "calendarWindow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "maxDays"
+      ],
+      "properties": {
+        "start": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "end": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "maxDays": {
+          "const": 42
+        }
+      }
+    },
+    "paging": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mail",
+        "calendar"
+      ],
+      "properties": {
+        "mail": {
+          "$ref": "#/$defs/pageSet"
+        },
+        "calendar": {
+          "$ref": "#/$defs/pageSet"
+        }
+      }
+    },
+    "pageSet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete",
+        "hasMore",
+        "sourceRetrievedCount",
+        "retrievedCount",
+        "pageCount",
+        "pageSize",
+        "pages"
+      ],
+      "properties": {
+        "complete": {
+          "const": true
+        },
+        "hasMore": {
+          "const": false
+        },
+        "sourceRetrievedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retrievedCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pageCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pageSize": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "pages": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/page"
+          }
+        }
+      }
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pageNumber",
+        "skipCount",
+        "sourceItemCount",
+        "itemCount"
+      ],
+      "properties": {
+        "pageNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "skipCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sourceItemCount": {
+          "description": "Items returned by the connector page before relevance minimization; used to prove paging continuity.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "itemCount": {
+          "description": "Items retained from this page in the minimized output array.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        }
+      }
+    },
+    "message": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableId",
+        "receivedAt",
+        "subject",
+        "from",
+        "bodyPreview",
+        "importance",
+        "isRead"
+      ],
+      "properties": {
+        "stableId": {
+          "type": "string",
+          "pattern": "^mail:.+"
+        },
+        "receivedAt": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "subject": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "from": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "bodyPreview": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "importance": {
+          "enum": [
+            "low",
+            "normal",
+            "high"
+          ]
+        },
+        "isRead": {
+          "type": "boolean"
+        },
+        "conversationId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "webLink": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "eventBase": {
+      "type": "object",
+      "required": [
+        "stableId",
+        "privacyMode",
+        "start",
+        "end",
+        "showAs",
+        "isAllDay"
+      ],
+      "properties": {
+        "stableId": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "privacyMode": {
+          "enum": [
+            "relevant",
+            "busyOnly"
+          ]
+        },
+        "start": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "end": {
+          "$ref": "#/$defs/dateTime"
+        },
+        "showAs": {
+          "enum": [
+            "free",
+            "tentative",
+            "busy",
+            "oof",
+            "workingelsewhere",
+            "unknown"
+          ]
+        },
+        "isAllDay": {
+          "type": "boolean"
+        }
+      }
+    },
+    "relevantEvent": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/eventBase"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "stableId",
+            "privacyMode",
+            "start",
+            "end",
+            "showAs",
+            "isAllDay",
+            "subject",
+            "bodyPreview",
+            "organizer",
+            "attendees",
+            "location"
+          ],
+          "properties": {
+            "stableId": {
+              "type": "string",
+              "pattern": "^event:.+"
+            },
+            "privacyMode": {
+              "const": "relevant"
+            },
+            "start": {
+              "$ref": "#/$defs/dateTime"
+            },
+            "end": {
+              "$ref": "#/$defs/dateTime"
+            },
+            "showAs": {
+              "enum": [
+                "free",
+                "tentative",
+                "busy",
+                "oof",
+                "workingelsewhere",
+                "unknown"
+              ]
+            },
+            "isAllDay": {
+              "type": "boolean"
+            },
+            "subject": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "bodyPreview": {
+              "type": "string",
+              "maxLength": 2000
+            },
+            "organizer": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            "attendees": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/nonEmptyString"
+              },
+              "uniqueItems": true
+            },
+            "location": {
+              "type": "string"
+            },
+            "webLink": {
+              "type": "string",
+              "format": "uri"
+            }
+          }
+        }
+      ]
+    },
+    "busyBlock": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/eventBase"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "stableId",
+            "privacyMode",
+            "start",
+            "end",
+            "showAs",
+            "isAllDay"
+          ],
+          "properties": {
+            "stableId": {
+              "type": "string",
+              "pattern": "^event:.+"
+            },
+            "privacyMode": {
+              "const": "busyOnly"
+            },
+            "start": {
+              "$ref": "#/$defs/dateTime"
+            },
+            "end": {
+              "$ref": "#/$defs/dateTime"
+            },
+            "showAs": {
+              "enum": [
+                "free",
+                "tentative",
+                "busy",
+                "oof",
+                "workingelsewhere",
+                "unknown"
+              ]
+            },
+            "isAllDay": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

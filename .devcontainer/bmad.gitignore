@@ -1,0 +1,21 @@
+# BMAD Method v6 Ignores
+
+# Claude configuration — user-specific
+.claude/
+
+# Node modules (if any)
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/

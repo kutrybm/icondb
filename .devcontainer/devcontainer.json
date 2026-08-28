@@ -1,0 +1,54 @@
+{
+  "name": "BMAD Method v6 - P&G Product Manager Workspace",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": "false",
+      "installOhMyZsh": "false",
+      "upgradePackages": "false"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    },
+    "ghcr.io/eitsupi/devcontainer-features/just:0": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "yzhang.markdown-all-in-one",
+        "bierner.markdown-mermaid",
+        "redhat.vscode-yaml",
+        "editorconfig.editorconfig",
+        "davidanson.vscode-markdownlint"
+      ],
+      "settings": {
+        "workbench.editor.enablePreview": false
+      }
+    },
+    "codespaces": {
+      "repositories": {
+        "procter-gamble/*": {
+          "permissions": {
+            "contents": "read"
+          }
+        }
+      }
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup-bmad.sh 2>&1 | tee /tmp/bmad-setup.log; bash .devcontainer/setup-mcp.sh 2>&1 | tee /tmp/mcp-setup.log; bash .devcontainer/setup-pre-commit.sh 2>&1 | tee /tmp/pre-commit-setup.log || true",
+  "postAttachCommand": "sleep 1 && code -r INSTRUCTIONS.md; if [ ! -f $HOME/.bmad-onboarded ]; then touch $HOME/.bmad-onboarded && $BROWSER https://sites.idp.pg.com/bmad-onboarding-instructions-idp/ || true; fi",
+  "remoteUser": "node",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "mounts": [
+    "source=bmad-bashhistory,target=/commandhistory,type=volume"
+  ],
+  "shutdownAction": "stopContainer"
+}
